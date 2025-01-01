@@ -4,6 +4,8 @@ import java.util.List;
 public class Parkwalk {
     public static void main(String[] args) {
         Solution s = new Solution();
+        int[] answer = s.solution(new String[]{"OOXSOOOOO", "OOOOOOOOO", "OOOOOOOOO"}, new String[]{"E 3"});
+        System.out.println(answer[0] + " " + answer[1]);
     }
 
     private static class Solution {
@@ -48,22 +50,23 @@ public class Parkwalk {
                     moved.y = answer[1] + Integer.parseInt(route[1]);
                 }
 
-                if(moved.x > W || moved.x < 0 || moved.y > H || moved.y < 0) continue;
+                System.out.println(moved.x + " " + moved.y);
+                if(moved.x >= H || moved.x < 0 || moved.y >= W || moved.y < 0) continue;
                 boolean checkObstacle = false;
                 for(Pair ob : obastacle){
-                    if(route[0] == "N" && moved.y == ob.y && moved.x <= ob.x){
+                    if(route[0].equals("N") && moved.y == ob.y && (answer[0] > ob.x && moved.x <= ob.x)){
                         checkObstacle = true;
                         break;
                     }
-                    if(route[0] == "S" && moved.y == ob.y && moved.x >= ob.x){
+                    if(route[0].equals("S") && moved.y == ob.y && (answer[0] < ob.x && moved.x >= ob.x)){
                         checkObstacle = true;
                         break;
                     }
-                    if(route[0] == "W" && moved.x == ob.x && moved.y <= ob.y){
+                    if(route[0].equals("W") && moved.x == ob.x && (answer[1] > ob.y && moved.y <= ob.y)){
                         checkObstacle = true;
                         break;
                     }
-                    if(route[0] == "E" && moved.x == ob.x && moved.y >= ob.y){
+                    if(route[0].equals("E") && moved.x == ob.x && (answer[1] < ob.y && moved.y >= ob.y)){
                         checkObstacle = true;
                         break;
                     }
@@ -80,7 +83,7 @@ public class Parkwalk {
             return answer;
         }
 
-        private class Pair{
+        private static class Pair{
             int x;
             int y;
             Pair(int x, int y){
