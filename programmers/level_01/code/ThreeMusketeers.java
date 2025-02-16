@@ -1,3 +1,5 @@
+package code;
+
 public class ThreeMusketeers {
     public static void main(String[] args) {
         Solution s = new Solution();

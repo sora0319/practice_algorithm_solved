@@ -1,3 +1,5 @@
+package code;
+
 public class AddPainting {
     public static void main(String[] args) {
         Solution S = new Solution();

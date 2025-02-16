@@ -1,3 +1,5 @@
+package code;
+
 public class AddNoneNumber {
     public static void main(String[] args) {
         Solution s = new Solution();
