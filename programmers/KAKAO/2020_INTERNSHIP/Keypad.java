@@ -1,4 +1,4 @@
-public class keypad {
+public class Keypad {
     public static void main(String args[]){
         Solution s = new Solution();
         System.out.println(s.solution(new int[]{7, 0, 8, 2, 8, 3, 1, 5, 7, 6, 2}, "right"));
