@@ -1,4 +1,4 @@
-package medium.no_128_longest_consecutive_sequence;
+package no_128_longest_consecutive_sequence;
 
 import java.util.HashSet;
 import java.util.Set;

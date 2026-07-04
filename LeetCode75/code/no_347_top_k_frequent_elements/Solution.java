@@ -1,4 +1,4 @@
-package medium.no_347_top_k_frequent_elements;
+package no_347_top_k_frequent_elements;
 
 import java.util.*;
 
